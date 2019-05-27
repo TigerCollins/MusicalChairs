@@ -1,0 +1,1411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotify4Unity</name>
+    </assembly>
+    <members>
+        <member name="T:Spotify4Unity.Analysis">
+            <summary>
+            Class to handle debug information and logging for the Spotify4Unity plugin
+            Can enabled all logs from the plugin by adding "S4U_LOGS" into the Scripting Define Symbols inside Unity Player Settings
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Analysis.LogLevel">
+            <summary>
+            Types of logs for Spotify4Unity
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Analysis.LogLevel.None">
+            <summary>
+            No messages at all
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Analysis.LogLevel.Vital">
+            <summary>
+            Important log, should be shown unless not wanted
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Analysis.LogLevel.All">
+            <summary>
+            All messages about state changes, info, etc
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Analysis.LogsLevel">
+            <summary>
+            Level at which logs should be shown and outputted to the user
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Analysis.PLUGIN_NAME">
+            <summary>
+            Name to prefix before debug messages
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.Analysis.Log(System.String,Spotify4Unity.Analysis.LogLevel)">
+            <summary>
+            Logs a normal message out to the Unity console
+            </summary>
+            <param name="message"></param>
+            <param name="logType"></param>
+        </member>
+        <member name="M:Spotify4Unity.Analysis.LogWarning(System.String,Spotify4Unity.Analysis.LogLevel)">
+            <summary>
+            Logs a warning message out to the Unity console
+            </summary>
+            <param name="message"></param>
+            /// <param name="logType"></param>
+        </member>
+        <member name="M:Spotify4Unity.Analysis.LogError(System.String,Spotify4Unity.Analysis.LogLevel)">
+            <summary>
+            Logs a warning message out to the Unity console
+            </summary>
+            <param name="message"></param>
+            <param name="logType"></param>
+        </member>
+        <member name="T:Spotify4Unity.Dtos.AccountInfo">
+            <summary>
+            Base class for sharing properties between artists and users
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.AccountInfo.Name">
+            <summary>
+            Display name of the account
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.AccountInfo.Id">
+            <summary>
+            Unique Id of the account
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.AccountInfo.Followers">
+            <summary>
+            How many followers the account has
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.AccountInfo.ProfilePictureURL">
+            <summary>
+            The URL of the first profile picture for the user, can be empty
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Dtos.ArtistInfo">
+            <summary>
+            All available information for artists
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.ArtistInfo.Popularity">
+            <summary>
+            A number between 0 and 100 that defines the current popularity
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.ArtistInfo.Genres">
+            <summary>
+            List of display names of genres the artist is part of
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.ArtistInfo.ShareURL">
+            <summary>
+            First url that can be used to share the artist
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Dtos.UserInfo">
+            <summary>
+            All information available for users
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.UserInfo.Username">
+            <summary>
+            The username of the user, different from their (display) name
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.UserInfo.IsPremium">
+            <summary>
+            Is the user a premium user
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.UserInfo.Country">
+            <summary>
+            A code of the country for the user. For example, if the user is in Great Britain, it will be "GB"
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.UserInfo.Birthdate">
+            <summary>
+            The birthdate of the user. Will be DateTime.Min if invalid or unavailable
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Dtos.Device">
+            <summary>
+            A device that is capable of having Spotify streamed to
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Device.Name">
+            <summary>
+            The display name of the device
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Device.Id">
+            <summary>
+            The internal ID of the device
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Device.IsActive">
+            <summary>
+            Is the device active and controlling Spotify
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Device.VolumePercent">
+            <summary>
+            The current volume percentage of the device
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Device.Type">
+            <summary>
+            The type of device it is
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.Name">
+            <summary>
+            The name of the playlist
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.Author">
+            <summary>
+            The creator of the playlist
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.Followers">
+            <summary>
+            The amount of followers the playlist has
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.ImageUrl">
+            <summary>
+            The url of the image that represents the playlist
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.Uri">
+            <summary>
+            The internal Spotify Uri of the playlist
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Playlist.Tracks">
+            <summary>
+            All tracks inside the playlist
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.Artists">
+            <summary>
+            All artist(s) that has created the track
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.Title">
+            <summary>
+            Title of the track
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.Album">
+            <summary>
+            Name of the album the song is from
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.TrackURL">
+            <summary>
+            Url of the song
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.TrackUri">
+            <summary>
+            The URI of the track
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.AlbumUri">
+            <summary>
+            The URI of the album
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.TrackId">
+            <summary>
+            The Spotify ID of the current track
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.TotalTimeMs">
+            <summary>
+            Total time in milliseconds the song is
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.Artist">
+            <summary>
+            Name of the first artist on the track
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Dtos.Track.Popularity">
+            <summary>
+            Amount of popularity the track has, from X to X
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Enums.AccountType">
+            <summary>
+            Types of accounts that are on Spotify
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.AccountType.User">
+            <summary>
+            A user account
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.AccountType.Artist">
+            <summary>
+            An artist account
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Enums.DeviceType">
+            <summary>
+            Different devices able to run Spotify
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Unknown">
+            <summary>
+            Unable to define the device type
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Computer">
+            <summary>
+            Normal computer
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Tablet">
+            <summary>
+            Tablet device
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Smartphone">
+            <summary>
+            Mobile phone
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Speaker">
+            <summary>
+            Smart speaker
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.TV">
+            <summary>
+            Smart TV
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.AudioVideoReciever">
+            <summary>
+            Audio/Video Reciever
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.SetTopBox">
+            <summary>
+            Set-Top Box Device
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.AudioDongle">
+            <summary>
+            Standard audio dongle
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.GameConsole">
+            <summary>
+            Games console
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.ChromecastVideo">
+            <summary>
+            Chromecase device capable of audio/video
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.ChromecastAudio">
+            <summary>
+            Chromecase device capable of only audio
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.DeviceType.Automobile">
+            <summary>
+            Car automobile
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Repeat.Disabled">
+            <summary>
+            Spotify won't repeat any songs
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Repeat.Playlist">
+            <summary>
+            Will repeat the current playlist
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Repeat.Track">
+            <summary>
+            Repeats the current track
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Resolution.Original">
+            <summary>
+            The original size of the image (no resizing)
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Resolution.x64">
+            <summary>
+            64x64
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Resolution.x128">
+            <summary>
+            128x128
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Resolution.x256">
+            <summary>
+            256x256
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Enums.Resolution.x512">
+            <summary>
+            512x512
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Events.GameEventBase">
+            <summary>
+            Base event class for sharing GameEvents through the EventManager
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Events.TrackTimeChanged.CurrentPositionMs">
+            <summary>
+            The current position of the track in milliseconds
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Events.TrackTimeChanged.CurrentPositionSpan">
+            <summary>
+            The current position of the track as a time span
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Events.TrackTimeChanged.TotalTimeMs">
+            <summary>
+            The total time of the track in milliseconds
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.Events.TrackTimeChanged.TotalTimeSpan">
+            <summary>
+            The total time of the track as a time span
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Helpers.TextureScaler">
+             https://pastebin.com/raw/qkkhWs2J
+             A unility class with functions to scale Texture2D Data.
+            
+             Scale is performed on the GPU using RTT, so it's blazing fast.
+             Setting up and Getting back the texture data is the bottleneck. 
+             But Scaling itself costs only 1 draw call and 1 RTT State setup!
+             WARNING: This script override the RTT Setup! (It sets a RTT!)	 
+            
+             Note: This scaler does NOT support aspect ratio based scaling. You will have to do it yourself!
+             It supports Alpha, but you will have to divide by alpha in your shaders, 
+             because of premultiplied alpha effect. Or you should use blend modes.
+        </member>
+        <member name="M:Spotify4Unity.Helpers.TextureScaler.scaled(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.FilterMode)">
+            <summary>
+            Returns a scaled copy of given texture. 
+            </summary>
+            <param name="tex">Source texure to scale</param>
+            <param name="width">Destination texture width</param>
+            <param name="height">Destination texture height</param>
+            <param name="mode">Filtering mode</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.TextureScaler.scale(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.FilterMode)">
+            <summary>
+            Scales the texture data of the given texture.
+            </summary>
+            <param name="tex">Texure to scale</param>
+            <param name="width">New width</param>
+            <param name="height">New height</param>
+            <param name="mode">Filtering mode</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Spotify4Unity.Helpers.AcrossListBase`1" -->
+        <member name="M:Spotify4Unity.Helpers.AcrossListBase`1.UpdateUI(System.Collections.Generic.List{`0})">
+            <summary>
+            Updates the list UI in the order described by the class
+            </summary>
+            <param name="dataList">The list of data to populate each prefab with</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Spotify4Unity.Helpers.ItemsControlBase`1" -->
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.UpdateUI(System.Collections.Generic.List{`0})">
+            <summary>
+            Updates the list UI in a vertical pattern
+            </summary>
+            <param name="dataList">The list of data to populate each prefab with</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.UpdateUICoroutine(System.Collections.Generic.List{`0})">
+            <summary>
+             Updates the list UI in a vertical pattern using Unity's Couroutines
+            </summary>
+            <param name="dataList"></param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.SetScrollView(UnityEngine.RectTransform@,UnityEngine.UI.ScrollRect@,UnityEngine.Vector2,System.Single)">
+            <summary>
+            Sets the canvas to the target size and right position, and sets the ScrollRect
+            </summary>
+            <param name="canvas">The canvas</param>
+            <param name="scrollRect">The scroll rect of the canvas</param>
+            <param name="canvasSize">The target new size of the canvas</param>
+            <param name="scrollSensitivity">The amount to scroll by on one scroll</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.DestroyChildren(UnityEngine.Transform)">
+            <summary>
+            Destroys all children of the parent transform, won't destroy the parent transform passed through
+            </summary>
+            <param name="parent">The parent Transform containing children to destroy</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.UpdateVisibleElements(System.Single)">
+            <summary>
+            List optimization to not draw every single prefab object if it isn't in view 
+            </summary>
+            <param name="offset">The amount of pixels to add as offset to the canvas corners to draw extra UI above/below</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.SetPrefabInfo(UnityEngine.GameObject,`0)">
+            <summary>
+            Populate each prefab in the list with it's data
+            </summary>
+            <param name="instantiatedPrefab">The currently instantiated prefab</param>
+            <param name="data">The current data the list is on</param>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.ItemsControlBase`1.OnUIUpdateFinished">
+            <summary>
+            Callback for when the UI has finished populating the list
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.Helpers.QueueService.QueuedTracks">
+            <summary>
+            All tracks that have been queued and waiting to be played
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Helpers.UIMouseEvents">
+            <summary>
+            Used to detect mouse events and pass them up to any inherited class
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.Helpers.Utility">
+            <summary>
+            Utility class to assist Spotify4Unity
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.Utility.ResolutionToRect(Spotify4Unity.Enums.Resolution,System.Single,System.Single)">
+            <summary>
+            Converts Resolutions to their correct Rect size
+            </summary>
+            <param name="r"></param>
+            <param name="originalWidth"></param>
+            <param name="originalHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.Helpers.Utility.RunCoroutineEmptyObject(System.Collections.IEnumerator)">
+            <summary>
+            Use if you want to run a Coroutine on a game object that isn't active
+            </summary>
+            <param name="routine"></param>
+        </member>
+        <member name="T:Spotify4Unity.MobileSpotifyService">
+            <summary>
+            Service to use for mobile authorization and communication
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.MobileSpotifyService.Platforms">
+            <summary>
+            All platforms supported by the Mobile Spotify Service
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.Platforms.Android">
+            <summary>
+            Android platform
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.Platforms.iOS">
+            <summary>
+            iOS platform
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.Platform">
+            <summary>
+            The intended platform for the service to run on. It's important to set the correct 
+            one and follow the setup instructions correctly
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.Scheme">
+            <summary>
+            Full scheme name to use with the Android application
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.RedirectUrlSuffix">
+            <summary>
+            Suffix of the redirect url after scheme and "://"
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.AutoReauthorize">
+            <summary>
+            Should the service prompt the user for reauthorization when the current token has exired?
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.MobileSpotifyService.DebugURLAuthorization">
+            <summary>
+            Full url authorization for debugging in Editor
+            </summary>
+        </member>
+        <member name="E:Spotify4Unity.MobileSpotifyService.OnAuthorizationExpired">
+            <summary>
+            Triggered when the current authorization has expired and is no longer valid
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.MobileSpotifyService.m_formattedDeepLink">
+            <summary>
+            Formatted link with the Scheme and Suffix to create a deep link
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.MobileSpotifyService.m_isInEditor">
+            <summary>
+            Determine if the code is currently being run in the Editor or on Android
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.Connect">
+            <summary>
+            Make an attempt to authorize with Spotify. Returns a bool to represent if an attempt can/has been made
+            </summary>
+            <returns>If the attempt sucessfully managed to be attempted. Doesn't represent if the service is connected or not</returns>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.OnRecievedAuth(System.String)">
+            <summary>
+            Entry method in recieveing and parsing auth from Deep Linking
+            </summary>
+            <param name="authArgs"></param>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.URLOpened(System.String)">
+            <summary>
+            Entry point for parsing URL parameters from iOS
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.GetArgs">
+            <summary>
+            Gets the arguments for the current platform
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.BeginImplicitAuth(System.String,System.String)">
+            <summary>
+            Begin the authorization process for Android (Implicit authorization)
+            </summary>
+            <param name="clientId"></param>
+            <param name="redirectUrl"></param>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.GetAuthURL(System.String,System.String)">
+            <summary>
+            Builds and returns the appropriate authorization URL for Spotify
+            </summary>
+            <param name="clientId">Your client id for Spotify</param>
+            <param name="redirectUrl">Your Redirect URL for Spotify</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.ParseAuth(System.String)">
+            <summary>
+            Parses the auth url
+            </summary>
+            <param name="urlAuth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.MobileSpotifyService.GetEscapedScopes">
+            <summary>
+            Returns an escaped string of scopes to unclude in the URL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spotify4Unity.SpotifyServiceBase">
+            <summary>
+            Constant class service for controlling and retrieving information to/from Spotify. For more info, check out the public documentation at https://github.com/JoshLmao/Spotify4Unity/wiki
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.SpotifyServiceBase.LocalContext">
+            <summary>
+            The current playing local context
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.ClientId">
+            <summary>
+            Your Client ID for your app.
+            You must register your application to use the Spotify API online at https://developer.spotify.com/documentation/general/guides/app-settings/#register-your-app
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.ConnectionTimeout">
+            <summary>
+            Amount of seconds to wait for authentification before failing
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.AutoConnect">
+             <summary>
+            Should the control automatically connect to Spotify when not connected?
+             </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.UpdateFrequencyMs">
+            <summary>
+            The amount of milliseconds to update the internal loop for updating current track/album/artist/etc. 
+            WARNING: Making the update loop quicker can cause more API calls which will require re-auth to the API
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.LogLevel">
+            <summary>
+            Amount of debug information that should be shown
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.ReuseAuthTokens">
+            <summary>
+            Should the service save and reuse old valid authentification token if it's still valid
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.IsConnecting">
+            <summary>
+            Is the service currently trying to connect and get authorization?
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.IsPlaying">
+            <summary>
+            Is Spotify currently playing music?
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.IsConnected">
+            <summary>
+            Are we connected to Spotify and able to control it
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.IsMuted">
+            <summary>
+            Is the sounds from Spotify muted
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.SavedTracks">
+            <summary>
+            All tracks saved to the users Spotify library
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.ShuffleState">
+            <summary>
+            The current state of shuffle
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.RepeatState">
+            <summary>
+            Current state of repeat
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.Playlists">
+            <summary>
+            All playlists created and saved by the user
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.Devices">
+            <summary>
+            Currently available devices Spotify can switch to
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.CurrentTrack">
+            <summary>
+            The current track being played
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.CurrentTrackTimeMs">
+            <summary>
+            The current position in milliseconds the track has played
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.Volume">
+            <summary>
+            The current volume levels
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.ActiveDevice">
+            <summary>
+            Currently active device using Spotify
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.UserInformation">
+            <summary>
+            Current information about the currently logged in user
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.ExpireTime">
+            <summary>
+            Time at when the current authorization will expire, will return DateTime.MinValue if no token
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.IsPremium">
+            <summary>
+            Is the user currently paying for Spotify Premium
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.MediaType">
+            <summary>
+            Type of media currently being played in Spotify
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.m_lastAuthToken">
+            <summary>
+            The last successful authorized token
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyServiceBase.EventManager">
+            <summary>
+            The event manager instance for the service class, given to all SpotifyUIBase scripts
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.m_isInit">
+            <summary>
+            Has the service initialized it's values
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.AUTH_TOKEN_MARGIN_SECONDS">
+            <summary>
+            Amount of time to remove from authenticated token's time to renew before the previous expire
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.MAX_VOLUME_AMOUNT">
+            <summary>
+            The max number for volume to be set
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.PREMIUM_ID">
+            <summary>
+            The id for premium on the users profile
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyServiceBase.USER_ID">
+            <summary>
+            The id for a user (non-premium) on the users profile
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Connect">
+            <summary>
+            Make an attempt to authorize with Spotify. Returns a bool to represent if an attempt can/has been made
+            </summary>
+            <returns>If the attempt sucessfully managed to be attempted. Doesn't represent if the service is connected or not</returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Configure(SpotifyAPI.Web.Models.Token,SpotifyAPI.Web.Auth.AuthorizationCodeAuth)">
+            <summary>
+            Configures the initial SpotifyWebAPI using the latest authorization details
+            </summary>
+            <param name="token">The latest authorization token</param>
+            <param name="auth">The initial authorization code class</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlayTrack(Spotify4Unity.Dtos.Track)">
+            <summary>
+            Play a song in Spotify, in the context of the album
+            </summary>
+            <param name="t">The track</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlaySong(System.String,System.String,System.String)">
+            <summary>
+            Play a song in Spotify. Can be played by supplying either
+            </summary>
+            <param name="trackUri">The Uri of the track to play. If left blank, AlbumUri needs to be supplied!</param>
+            <param name="albumUri">The Uri of the album the track belongs to. If left blank, TrackURI needs to be supplied!</param>
+            <param name="deviceId">The id of the device to play the track on. Leaving blank will play on the current active device</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlaySongs(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Play a list of tracks inside Spotify. Will be played without any other context
+            </summary>
+            <param name="trackUris">The list of tracks to play</param>
+            <param name="deviceId">The id of the device to play the track on. Leaving blank will play on the current active device</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlayPlaylist(Spotify4Unity.Dtos.Playlist)">
+            <summary>
+            Play a playlist in Spotify. First song to play is decided by Shuffle mode
+            </summary>
+            <param name="p">The playlist context to play from</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlayAlbum(Spotify4Unity.Dtos.Album)">
+            <summary>
+            Plays an album in Spotify
+            </summary>
+            <param name="a">The album to play from</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PlayArtist(Spotify4Unity.Dtos.Artist)">
+            <summary>
+            Plays the top songs of an artist in Spotify
+            </summary>
+            <param name="artist"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.QueueTrack(Spotify4Unity.Dtos.Track)">
+            <summary>
+            Queues a track to play after the current track has finished. If the queue has tracks inside, it will be added to the back of the queue
+            </summary>
+            <param name="t">The track to add to the back of the queue</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Disconnect">
+            <summary>
+            Disconnects and removes any information from the service
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Play">
+            <summary>
+            Plays the song currently in Spotify
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Pause">
+            <summary>
+            Pauses the current song
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetMute(System.Boolean)">
+            <summary>
+            Sets the current Spotify device to be muted or not
+            </summary>
+            <param name="isMuted">True is muted. False is Unmuted</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetMute(System.Int32)">
+            <summary>
+            Set the current Spotify device to be muted or not from the current volume percentage
+            </summary>
+            <param name="volumePercentage">The current volume as a percentage</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetMuteInternal(System.Boolean)">
+            <summary>
+            Sets the mute state relative to the service, excludes the SpotifyAPI WebAPI
+            </summary>
+            <param name="isMuted"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Spotify4Unity.SpotifyServiceBase.SetTrackPosition(System.Single,System.Single)" -->
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetTrackPosition(System.Single)">
+            <summary>
+            Move the current track position using milliseconds
+            </summary>
+            <param name="positionMs">The position in milliseconds to set track position to</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetTrackPositionAsync(System.Single)">
+            <summary>
+            Move the current track position using milliseconds
+            </summary>
+            <param name="positionMs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.NextSong">
+            <summary>
+            Skips the current song and plays the next song
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.NextSongAsync">
+            <summary>
+            Skips the current song and plays the next song
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PreviousSong">
+            <summary>
+            Changes the playback of Spotify to the previous song
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.PreviousSongAsync">
+            <summary>
+            Changes the playback of Spotify to the previous song
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetVolume(System.Single)">
+            <summary>
+            Sets the volume of Spotify
+            </summary>
+            <param name="newVolume">New volume amount. Should be between 0 - 100</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetVolume(System.Int32)">
+            <summary>
+            Sets the volume of Spotify
+            </summary>
+            <param name="newVolume">The new volume to set to. Should ne a number between 0 - 100</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetVolumeAsync(System.Int32)">
+            <summary>
+            Sets the volume of Spotify
+            </summary>
+            <param name="newVolume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetVolumeInternal(Spotify4Unity.Dtos.VolumeInfo)">
+            <summary>
+            Set the volume relative to the service, excluding the SpotifyAPI
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSongInfo">
+            <summary>
+            Gets the latest song information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSongInfoAsync">
+            <summary>
+            Gets the latest song information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSavedTracks">
+            <summary>
+            Gets all tracks saved to the users library in Spotify in the order they were added to their library
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSavedTracksAsync">
+            <summary>
+            Gets all tracks saved to the users library in Spotify in the order they were added to their library
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetUserPlaylistsAsync">
+            <summary>
+            Gets all playlists created by the logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetDevices">
+            <summary>
+            Gets all available Spotify devices that playback can be transfered to
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetDevicesAsync">
+            <summary>
+            Gets all available Spotify devices that playback can be transfered to
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetActiveDevice(Spotify4Unity.Dtos.Device)">
+            <summary>
+            Sets the current playback Spotify device
+            </summary>
+            <param name="d"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetActiveDeviceAsync(Spotify4Unity.Dtos.Device)">
+            <summary>
+            Sets the current playback Spotify device
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSavedTracksSorted(Spotify4Unity.Enums.Sort)">
+            <summary>
+            Gets all saved tracks and sorts the list by an option
+            </summary>
+            <param name="sortType">The sort order the list should be in</param>
+            <returns>The list of saved tracks sorted by the order</returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetSavedTracksSortedAsync(Spotify4Unity.Enums.Sort)">
+            <summary>
+            Gets all saved tracks and sorts the list by an option
+            </summary>
+            <param name="sortType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetProfileInfo">
+            <summary>
+            Gets the currently loaded user information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetRepeat(Spotify4Unity.Enums.Repeat)">
+            <summary>
+            Set the repeat state of Spotify
+            </summary>
+            <param name="state">The repeat state to set to</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetRepeatAsync(Spotify4Unity.Enums.Repeat)">
+            <summary>
+            Set the repeat state of Spotify
+            </summary>
+            <param name="state">The repeat state to set to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetShuffle(Spotify4Unity.Enums.Shuffle)">
+            <summary>
+            Sets the shuffle state of Spotify
+            </summary>
+            <param name="state">The shuffle state to set to</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SetShuffleAsync(Spotify4Unity.Enums.Shuffle)">
+            <summary>
+            Sets the shuffle state of Spotify
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.UpdateInternal">
+            <summary>
+            Internal update loop for detecting changes in the WebAPI since it has no callbacks
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.UpdateQueue(SpotifyAPI.Web.Models.PlaybackContext)">
+            <summary>
+            Own system for keeping an internal queue and making it function
+            </summary>
+            <param name="playback"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.Search(System.String,System.Int32)">
+            <summary>
+            Searches Spotify using a query string and return top amount results
+            </summary>
+            <param name="query">The string query to search</param>
+            <param name="amount">The maximum amount of relevant results to return</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SearchAsync(System.String,System.Int32)">
+            <summary>
+            Searches Spotify using a query string and return top results
+            </summary>
+            <param name="query">The query to search</param>
+            <param name="amount">The maximum amount of relevant results to return</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.IsUserFollowingUser(System.String)">
+            <summary>
+            Check if the current authorized user is follow another user
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.IsUserFollowingArtist(System.String)">
+            <summary>
+            Check if the current authorized user is follow an artist
+            </summary>
+            <param name="artistId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.FollowUsers(System.String[])">
+            <summary>
+            Follows all of the user's that are given as the "ids" on the current authorized user. Returns true if successful
+            </summary>
+            <param name="ids">Any/All user id's. Can be one or more</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.FollowArtists(System.String[])">
+            <summary>
+            Follows all of the artists that are given as the "ids" on the current authorized user. Returns true if successful
+            </summary>
+            <param name="ids">Any/All artist id's. Can be one or more</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.UnfollowUsers(System.String[])">
+            <summary>
+            Unfollows all of the user's that are given as the "ids" on the current authorized user. Returns true if successful
+            </summary>
+            <param name="ids">Any/All user id's. Can be one or more</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.UnfollowArtists(System.String[])">
+            <summary>
+            Unfollows all of the artists that are given as the "ids" on the current authorized user. Returns true if successful
+            </summary>
+            <param name="ids">Any/All artist id's. Can be one or more</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetUserDetails(System.String)">
+            <summary>
+            Gets all the public information available about the user
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.GetArtistDetails(System.String)">
+            <summary>
+            Gets all the information details about the artist
+            </summary>
+            <param name="artistId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.SaveTracks(Spotify4Unity.Dtos.Track[])">
+            <summary>
+            Saves one or several tracks to the user's library
+            </summary>
+            <param name="tracks"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyServiceBase.UnsaveTracks(Spotify4Unity.Dtos.Track[])">
+            <summary>
+            Unsaves one or several track from the user's library
+            </summary>
+            <param name="tracks"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spotify4Unity.SpotifyService">
+            <summary>
+            Spotify Service for PC
+            </summary>
+        </member>
+        <member name="T:Spotify4Unity.SpotifyService.RunRefreshToken">
+            <summary>
+            Event for running refresh token authorization on main thread
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyService.RunRefreshToken.ExpireSeconds">
+            <summary>
+            The amount of seconds until the last auth expires
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyService.RunRefreshToken.RefreshToken">
+            <summary>
+            The refresh token given from the last authorization
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyService.RunRefreshToken.CodeAuth">
+            <summary>
+            The authorization code auth class
+            </summary>
+        </member>
+        <member name="P:Spotify4Unity.SpotifyService.RunRefreshToken.CreationTime">
+            <summary>
+            The time the tokens were created
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyService.SecretId">
+            <summary>
+            The secret ID for your app. Follow the same instructions as the ClientID to get it
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyService.ConnectionPort">
+            <summary>
+            The port to use when authenticating. Should be the same as your "Redirect URI" in your application's Spotify Dashboard
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyService.Connect">
+            <summary>
+            Make an attempt to authorize with Spotify. Returns a bool to represent if an attempt can/has been made
+            </summary>
+            <returns>If the attempt sucessfully managed to be attempted. Doesn't represent if the service is connected or not</returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyService.ConnectSpotifyWebHelper(System.String,System.String,System.Int32)">
+            <summary>
+            Connectes to the WebHelper with your ClientId
+            </summary>
+            <param name="clientId">Custom client id</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyService.AwaitConnectionTimeout(System.Int32,SpotifyAPI.Web.Auth.AuthorizationCodeAuth)">
+            <summary>
+            Awaits the intial connection timeout if not recieved within given time
+            </summary>
+            <param name="timeoutSeconds"></param>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spotify4Unity.SpotifyUIBase">
+            <summary>
+            Base class to override for creating custom Unity UI
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyUIBase.SpotifyService">
+            <summary>
+            Current Spotify Service that exists in the scene
+            </summary>
+        </member>
+        <member name="F:Spotify4Unity.SpotifyUIBase.m_eventManager">
+            <summary>
+            Event Manager used to propegate events from SpotifyService. Can be used for other events by you (inhert from Spotify4Unity.Events.GameEventBase)
+            </summary>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.GetVolume">
+            <summary>
+            Gets the current volume information with current and max volume level 
+            </summary>
+            <returns>The current volume information</returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.SetVolume(System.Single)">
+            <summary>
+            Sets the volume of Spotify to a new amount. Number between 0 - 100
+            </summary>
+            <param name="newVolume">New volume amount between 0 - 100</param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.SetCurrentTrackTime(System.Single)">
+            <summary>
+            Sets the current track to a position in milliseconds
+            </summary>
+            <param name="positionMs"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.SetCurrentTrackTime(System.Int32)">
+            <summary>
+            Sets the current track a new position using total seconds. For example, using 90 would set the track to 1 minute, 30 seconds
+            </summary>
+            <param name="totalSeconds"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.SetCurrentTrackTime(System.Int32,System.Int32)">
+            <summary>
+            Sets the current track position using minutes and seconds
+            </summary>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.GetCurrentSongInfo">
+            <summary>
+            Gets information on the currently playing track like title, arists, album name, etc
+            </summary>
+            <returns>All information on the current track</returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.GetPlayingStatus">
+            <summary>
+            Gets if Spotify is currently playing a song or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.LoadImageFromUrl(System.String,Spotify4Unity.Enums.Resolution,System.Action{UnityEngine.Sprite})">
+            <summary>
+            Loads an image from a url and runs an action on load
+            </summary>
+            <param name="url">The url of the image</param>
+            <param name="resolution">The target resolution to resize the image to</param>
+            <param name="onLoaded">Lambda expression for what to do once the load has finished</param>
+            <returns></returns>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnConnectingChanged(Spotify4Unity.Events.ConnectingChanged)">
+            <summary>
+            Callback for when the service status of trying to authorize has changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnConnectedChanged(Spotify4Unity.Events.ConnectedChanged)">
+            <summary>
+            Callback for when the service status of being connected to Spotify has changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnPlayStatusChanged(Spotify4Unity.Events.PlayStatusChanged)">
+            <summary>
+            Callback for when the playback status has changed between Playing and Paused
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnTrackTimeChanged(Spotify4Unity.Events.TrackTimeChanged)">
+            <summary>
+            Callback for when the current track time has changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnVolumeChanged(Spotify4Unity.Events.VolumeChanged)">
+            <summary>
+            Callback for when Spotify has it's volume changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnMuteChanged(Spotify4Unity.Events.MuteChanged)">
+            <summary>
+            Callback for when Spotify has changed it's mute state. Note: use OnVolumeChanged for callback on volume change
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnSavedTracksLoaded(Spotify4Unity.Events.SavedTracksLoaded)">
+            <summary>
+            Callback for when all the user's saved tracks have been initially loaded
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnTrackChanged(Spotify4Unity.Events.TrackChanged)">
+            <summary>
+            Callback for when the current playing track has been changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnUserInformationLoaded(Spotify4Unity.Events.UserInfoLoaded)">
+            <summary>
+            Callback for when the current authorized user's information has been loaded
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnShuffleChanged(Spotify4Unity.Events.ShuffleChanged)">
+            <summary>
+            Callback for when the shuffle state has been changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnRepeatChanged(Spotify4Unity.Events.RepeatChanged)">
+            <summary>
+            Callback for when the repeat state has been changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnPlaylistsChanged(Spotify4Unity.Events.PlaylistsChanged)">
+            <summary>
+            Callback for when the service loads all user playlists, a new one is created or one is removed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnDevicesChanged(Spotify4Unity.Events.DevicesChanged)">
+            <summary>
+            Callback for when the service loads all Spotify playback devices or finds a new device
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnMediaTypeChanged(Spotify4Unity.Events.MediaTypeChanged)">
+            <summary>
+            Callback for when the type of media being played has changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spotify4Unity.SpotifyUIBase.OnAuthorizationExpired(Spotify4Unity.Events.AuthorizationExpired)">
+            <summary>
+            Callback for when the current Spotify user authentification has expired
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ServiceHelper.ConvertFullTracksAsync(System.Collections.Generic.List{SpotifyAPI.Web.Models.FullTrack})">
+            <summary>
+            Converts the SpotifyAPI.NET model to my own
+            </summary>
+            <param name="fullTracksList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceHelper.GetAllFromPagingList``1(SpotifyAPI.Web.Models.Paging{``0},System.Func{System.Int32,System.Threading.Tasks.Task{SpotifyAPI.Web.Models.Paging{``0}}})">
+            <summary>
+            Get all elements from a paging list
+            </summary>
+            <typeparam name="T">The type the paging list contains</typeparam>
+            <param name="pagingList">The original paging list</param>
+            <param name="getNext">Code to retrieve more from the paging list. Argument is offset. Should return the next block of items in the paging list</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceHelper.GetAllFromPagingAsync``1(SpotifyAPI.Web.SpotifyWebAPI,SpotifyAPI.Web.Models.Paging{``0})">
+            <summary>
+            Gets all elements of a paging list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="api">A reference to the api</param>
+            <param name="pagingList">The list to get the rest of</param>
+            <returns></returns>
+        </member>
+        <member name="T:TokenSaver">
+            <summary>
+            Manages the saving and loading of the previous Authorization tokens
+            </summary>
+        </member>
+        <member name="F:TokenSaver.PREFS_TOKEN_NAME">
+            <summary>
+            Name of where to save the Json string of the current token
+            </summary>
+        </member>
+        <member name="M:TokenSaver.HasSavedTokenInfo">
+            <summary>
+            Have the system saved a previous valid token before
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TokenSaver.LoadToken">
+            <summary>
+            Loads a token from the previous file path
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TokenSaver.SaveToken(SpotifyAPI.Web.Models.Token)">
+            <summary>
+            Saves the current token to the target file path
+            </summary>
+            <param name="token">The last valid token</param>
+            <returns>Did the save run successfully</returns>
+        </member>
+        <member name="M:TokenSaver.DeleteToken">
+            <summary>
+            Deletes the currently stores authentification token
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
