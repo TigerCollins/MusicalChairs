@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     [Header("Script References")]
     public GameLoop gameLoop;
 
+    [Header("Player Rotation")]
+    public float smooth = 5.0f;
+    public float tiltAngle = 60.0f;
+
     [Header("Core Movement Variables")]
     public float movementMultiplier;
     private float tempVerticalMovement;
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         PlayerCoreMovement();
+        PlayerLook();
     }
 
     
@@ -122,5 +127,44 @@ public class PlayerController : MonoBehaviour
         {
             movementMultiplier = baseMovementMultiplier;
         }
+    }
+
+    void PlayerLook()
+    {
+        
+        if (HorizontalMovement != 0)
+        {
+
+        }
+
+        if (HorizontalMovement < 0)
+        {
+            Quaternion target = Quaternion.Euler(transform.rotation.x, 90, transform.rotation.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        }
+
+        if (HorizontalMovement > 0)
+        {
+            Quaternion target = Quaternion.Euler(transform.rotation.x, -90, transform.rotation.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        }
+
+        if (VerticalMovement != 0)
+        {
+
+        }
+
+        if (VerticalMovement < 0)
+        {
+            Quaternion target = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        }
+
+        if (VerticalMovement > 0)
+        {
+            Quaternion target = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        }
+
     }
 }
