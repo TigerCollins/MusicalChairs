@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     [Header("Script References")]
     public GameLoop gameLoop;
 
+    [Header("Chair Interactions")]
+    public bool inChair;
+
     [Header("Player Rotation")]
     public float smooth = 5.0f;
-    public float tiltAngle = 60.0f;
 
     [Header("Core Movement Variables")]
     public float movementMultiplier;
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
         if(collision.transform.tag == "Chair")
         {
             Destroy(collision.gameObject);
+            inChair = true;
             if (GameObject.FindGameObjectsWithTag("Chair").Length <= 1)
             {
                 gameLoop.maxChairs -= 1;
@@ -78,8 +81,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        PlayerCoreMovement();
-        PlayerLook();
+        if(inChair == false)
+        {
+            PlayerCoreMovement();
+            PlayerLook();
+        }
+
     }
 
     
