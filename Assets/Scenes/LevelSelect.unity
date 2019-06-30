@@ -3697,7 +3697,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: LocalPlayerJoin
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -5013,8 +5013,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262.2, y: 0.5}
-  m_SizeDelta: {x: 335.6, y: 90.8}
+  m_AnchoredPosition: {x: -287.5, y: 0.5}
+  m_SizeDelta: {x: 386.3, y: 90.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725676555
 MonoBehaviour:
@@ -5049,7 +5049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Player Select
 --- !u!222 &1725676556
 CanvasRenderer:
   m_ObjectHideFlags: 0
