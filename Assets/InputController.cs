@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class TempUIManager : MonoBehaviour
+public class InputController : MonoBehaviour
 {
+    [Header("Script References")]
+    PlayerSpecifics playerSpecifics;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,5 @@ public class TempUIManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void LoadScene(string levelString)
-    {
-        SceneManager.LoadScene(levelString);
     }
 }

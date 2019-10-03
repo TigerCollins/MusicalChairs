@@ -38,7 +38,7 @@ public class PauseMenuSpecific : MonoBehaviour
     {
 
         //Pause menu hotkey
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Gamepad Pause"))
         {
             Paused();
         }
