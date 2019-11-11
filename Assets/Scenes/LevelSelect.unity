@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 72447663}
   - component: {fileID: 72447665}
   - component: {fileID: 72447669}
+  - component: {fileID: 72447668}
   m_Layer: 5
   m_Name: Stage (1)
   m_TagString: Untagged
@@ -261,7 +262,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!114 &72447666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +300,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72447661}
   m_CullTransparentMesh: 0
+--- !u!114 &72447668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72447661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!114 &72447669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +396,7 @@ GameObject:
   - component: {fileID: 129289136}
   - component: {fileID: 129289140}
   - component: {fileID: 129289141}
+  - component: {fileID: 129289139}
   m_Layer: 5
   m_Name: Stage (2)
   m_TagString: Untagged
@@ -538,6 +561,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129289132}
   m_CullTransparentMesh: 0
+--- !u!114 &129289139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129289132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!114 &129289140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1018.3, y: -154.1}
-  m_SizeDelta: {x: 79.2, y: 49.2}
+  m_AnchoredPosition: {x: 51, y: -126.6}
+  m_SizeDelta: {x: 79.347, y: 49.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202573226
 MonoBehaviour:
@@ -744,6 +788,7 @@ GameObject:
   - component: {fileID: 278256121}
   - component: {fileID: 278256120}
   - component: {fileID: 278256119}
+  - component: {fileID: 278256125}
   m_Layer: 5
   m_Name: Stage (9)
   m_TagString: Untagged
@@ -931,6 +976,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278256117}
   m_CullTransparentMesh: 0
+--- !u!114 &278256125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278256117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &363128476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1319,7 @@ GameObject:
   - component: {fileID: 469864381}
   - component: {fileID: 469864380}
   - component: {fileID: 469864379}
+  - component: {fileID: 469864385}
   m_Layer: 5
   m_Name: Stage (4)
   m_TagString: Untagged
@@ -1440,6 +1507,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469864377}
   m_CullTransparentMesh: 0
+--- !u!114 &469864385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469864377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &496549670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1867,7 @@ GameObject:
   - component: {fileID: 726730813}
   - component: {fileID: 726730815}
   - component: {fileID: 726730819}
+  - component: {fileID: 726730818}
   m_Layer: 5
   m_Name: Stage
   m_TagString: Untagged
@@ -1905,7 +1994,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &726730816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,6 +2032,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726730811}
   m_CullTransparentMesh: 0
+--- !u!114 &726730818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726730811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!114 &726730819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2122,6 +2232,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814661203}
   m_CullTransparentMesh: 0
+--- !u!1 &821218175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821218176}
+  - component: {fileID: 821218178}
+  - component: {fileID: 821218177}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &821218176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821218175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1396378459}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -199.68, y: 0}
+  m_SizeDelta: {x: 499.35, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &821218177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821218175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &821218178
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821218175}
+  m_CullTransparentMesh: 0
 --- !u!1 &872155229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,9 +2331,10 @@ RectTransform:
   m_GameObject: {fileID: 872155229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1289732, y: 1.1289732, z: 1.1289732}
   m_Children:
   - {fileID: 202573225}
+  - {fileID: 2064183382}
   - {fileID: 935513246}
   - {fileID: 1847349116}
   m_Father: {fileID: 996581881}
@@ -2157,7 +2342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 0}
+  m_AnchoredPosition: {x: 930, y: -28.149}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &873180786
@@ -2404,12 +2589,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 872155230}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1119.8, y: -207.7}
-  m_SizeDelta: {x: 223.9, y: 42.38}
+  m_AnchoredPosition: {x: 112.4, y: -148.3}
+  m_SizeDelta: {x: 278.94, y: 42.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935513247
 MonoBehaviour:
@@ -2424,7 +2609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.44705883}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2498,6 +2683,7 @@ GameObject:
   - component: {fileID: 1048006290}
   - component: {fileID: 1048006289}
   - component: {fileID: 1048006288}
+  - component: {fileID: 1048006291}
   m_Layer: 5
   m_Name: StartRoundButton
   m_TagString: Untagged
@@ -2618,6 +2804,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048006286}
   m_CullTransparentMesh: 0
+--- !u!114 &1048006291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048006286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &1063078432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2905,7 @@ GameObject:
   - component: {fileID: 1106065443}
   - component: {fileID: 1106065445}
   - component: {fileID: 1106065449}
+  - component: {fileID: 1106065448}
   m_Layer: 5
   m_Name: Stage (3)
   m_TagString: Untagged
@@ -2861,6 +3069,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106065441}
   m_CullTransparentMesh: 0
+--- !u!114 &1106065448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106065441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!114 &1106065449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3180,7 +3409,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
+  m_BackGroundColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3420,6 +3649,7 @@ GameObject:
   - component: {fileID: 1382795419}
   - component: {fileID: 1382795418}
   - component: {fileID: 1382795417}
+  - component: {fileID: 1382795423}
   m_Layer: 5
   m_Name: Stage (5)
   m_TagString: Untagged
@@ -3607,6 +3837,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382795415}
   m_CullTransparentMesh: 0
+--- !u!114 &1382795423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382795415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &1396378458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,6 +3870,7 @@ GameObject:
   - component: {fileID: 1396378462}
   - component: {fileID: 1396378461}
   - component: {fileID: 1396378460}
+  - component: {fileID: 1396378463}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3638,6 +3890,7 @@ RectTransform:
   m_LocalScale: {x: 0.51871, y: 0.51871, z: 0.51871}
   m_Children:
   - {fileID: 1725676554}
+  - {fileID: 821218176}
   m_Father: {fileID: 1370607218}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
@@ -3739,6 +3992,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396378458}
   m_CullTransparentMesh: 0
+--- !u!114 &1396378463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396378458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 0.6
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &1409319603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,6 +4844,7 @@ GameObject:
   - component: {fileID: 1643874393}
   - component: {fileID: 1643874395}
   - component: {fileID: 1643874399}
+  - component: {fileID: 1643874398}
   m_Layer: 5
   m_Name: Stage (7)
   m_TagString: Untagged
@@ -4733,6 +5008,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643874391}
   m_CullTransparentMesh: 0
+--- !u!114 &1643874398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643874391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!114 &1643874399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5182,6 +5478,7 @@ GameObject:
   - component: {fileID: 1822745122}
   - component: {fileID: 1822745121}
   - component: {fileID: 1822745120}
+  - component: {fileID: 1822745126}
   m_Layer: 5
   m_Name: Stage (8)
   m_TagString: Untagged
@@ -5369,6 +5666,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822745118}
   m_CullTransparentMesh: 0
+--- !u!114 &1822745126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822745118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &1847349115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,15 +5714,15 @@ RectTransform:
   m_GameObject: {fileID: 1847349115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.57871, y: 0.57871, z: 0.57871}
   m_Children: []
   m_Father: {fileID: 872155230}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1118.2, y: -207.7}
-  m_SizeDelta: {x: 206.4, y: 42.375}
+  m_AnchoredPosition: {x: 112.06, y: -148.3}
+  m_SizeDelta: {x: 407.92, y: 73.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847349117
 MonoBehaviour:
@@ -5428,18 +5746,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 18
+    m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 7
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stage Name
+  m_Text: Test Environment
 --- !u!222 &1847349118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5666,6 +5984,80 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &2064183381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064183382}
+  - component: {fileID: 2064183384}
+  - component: {fileID: 2064183383}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2064183382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064183381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 872155230}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -70.69999}
+  m_SizeDelta: {x: 530.4, y: 332.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2064183383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064183381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 033f44c9dce384a449569efd3f2e87a7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &2064183384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064183381}
+  m_CullTransparentMesh: 0
 --- !u!1 &2071861952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5681,6 +6073,7 @@ GameObject:
   - component: {fileID: 2071861956}
   - component: {fileID: 2071861955}
   - component: {fileID: 2071861954}
+  - component: {fileID: 2071861960}
   m_Layer: 5
   m_Name: Stage (6)
   m_TagString: Untagged
@@ -5868,6 +6261,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071861952}
   m_CullTransparentMesh: 0
+--- !u!114 &2071861960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071861952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957baabb2665ba64988ece6e1faf173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
+  expansionSize: 1.05
+  hasSeperateImage: 0
+  seperateImage: {fileID: 0}
+  originalOtherButtonSize: {x: 0, y: 0, z: 0}
+  originalSize: {x: 0, y: 0, z: 0}
+  selected: 0
+  hover: 0
 --- !u!1 &2123346709
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,6 +74,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerSpecifics = GetComponent<PlayerSpecifics>();
 
+        //Set cooldown speeds according to hero ID
+        movementMultiplier = (movementMultiplier + playerSpecifics.agility) / 100;
+        baseDashCoolDown = baseDashCoolDown - (playerSpecifics.agility / 20);
+        pushForce = pushForce + (playerSpecifics.strength * 7);
+        pushBackCooldown = baseDashCoolDown - ((playerSpecifics.strength / 20 - playerSpecifics.agility / 15));
+
         //movement
         baseMovementMultiplier = movementMultiplier / 10;
         movementMultiplier = baseMovementMultiplier;
@@ -103,6 +109,8 @@ public class PlayerController : MonoBehaviour
         {
             player4Object = this.gameObject;
         }
+
+       
 
     }
 
@@ -303,7 +311,7 @@ public class PlayerController : MonoBehaviour
         }
         P2currentDashTime += dashStoppingSpeed;
 
-        if (playerID == 3 && Input.GetButtonDown("G1Teleport") && P1currentDashTime >= maxDashTime && dashCooldown <= 0)
+        if (playerID == 3 && Input.GetButtonDown("G3Teleport") && P1currentDashTime >= maxDashTime && dashCooldown <= 0)
         {
             P1currentDashTime = 0.0f;
             if (HorizontalMovement != 0 || VerticalMovement != 0 && P3currentDashTime < maxDashTime)
