@@ -17,6 +17,10 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
     public bool selected;
     public bool hover;
 
+    [Header("Image Adjustment")]
+    public Sprite orignalImage;
+    public Sprite newImage;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,6 +34,10 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
         {
             thisToggle = this.gameObject.GetComponent<Toggle>();
             originalSize = thisToggle.transform.localScale;
+            orignalImage = thisToggle.GetComponent<Image>().sprite;
+            ToggleIsOnOff();
+
+
         }
 
        
@@ -47,6 +55,8 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
             if (thisToggle.isOn == true)
             {
                 thisToggle.transform.localScale = new Vector3(expansionSize, expansionSize, expansionSize);
+                   // thisToggle.image.sprite = newImage;
+
             }
 
             else
@@ -142,15 +152,22 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
 
     public void ToggleIsOnOff()
     {
-        if(thisToggle.isOn == true)
+        if (thisToggle != null)
         {
-            thisToggle.transform.localScale = new Vector3(expansionSize, expansionSize, expansionSize);
+            if (thisToggle.isOn == true)
+            {
+                thisToggle.transform.localScale = new Vector3(expansionSize, expansionSize, expansionSize);
+                thisToggle.image.sprite = newImage;
+            }
+
+            else
+            {
+                thisToggle.transform.localScale = originalSize;
+                thisToggle.image.sprite = orignalImage;
+            }
         }
 
-        else
-        {
-            thisToggle.transform.localScale = originalSize;
-        }
+      
     }
 
 }
