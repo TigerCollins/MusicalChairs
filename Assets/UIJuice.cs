@@ -18,6 +18,7 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
     public bool hover;
 
     [Header("Image Adjustment")]
+    public bool doesImageChange;
     public Sprite orignalImage;
     public Sprite newImage;
 
@@ -35,7 +36,11 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
             thisToggle = this.gameObject.GetComponent<Toggle>();
             originalSize = thisToggle.transform.localScale;
             orignalImage = thisToggle.GetComponent<Image>().sprite;
-            ToggleIsOnOff();
+            if(doesImageChange == true)
+            {
+                ToggleIsOnOff();
+            }
+            
 
 
         }
@@ -152,7 +157,7 @@ public class UIJuice : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointer
 
     public void ToggleIsOnOff()
     {
-        if (thisToggle != null)
+        if (thisToggle != null && doesImageChange == true)
         {
             if (thisToggle.isOn == true)
             {
