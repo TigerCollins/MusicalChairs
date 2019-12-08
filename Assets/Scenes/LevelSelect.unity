@@ -321,6 +321,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!114 &72447669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +585,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!114 &129289140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +1003,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &363128476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +1537,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &496549670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2065,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!114 &726730819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2825,6 +2840,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1063078432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,6 +3108,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!114 &1106065449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3858,6 +3879,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1396378458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,6 +4037,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1409319603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5056,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!114 &1643874399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5687,6 +5717,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1847349115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,6 +6315,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &2123346709
 GameObject:
   m_ObjectHideFlags: 0

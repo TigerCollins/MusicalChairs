@@ -220,7 +220,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72828711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 575248527}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &72828711
@@ -273,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
   expansionSize: 1.05
   hasSeperateImage: 1
   seperateImage: {fileID: 2016338365}
@@ -280,6 +292,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &204874170
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
   expansionSize: 1.05
   hasSeperateImage: 1
   seperateImage: {fileID: 1328634041}
@@ -514,6 +530,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &377557169
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
   expansionSize: 1.05
   hasSeperateImage: 1
   seperateImage: {fileID: 1005293270}
@@ -848,6 +868,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &422672243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,6 +2239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
   expansionSize: 1.05
   hasSeperateImage: 1
   seperateImage: {fileID: 1096857278}
@@ -2223,6 +2247,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1230885862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,6 +3066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisButton: {fileID: 0}
+  thisToggle: {fileID: 0}
   expansionSize: 1.05
   hasSeperateImage: 1
   seperateImage: {fileID: 1940289561}
@@ -3046,6 +3074,9 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   selected: 0
   hover: 0
+  doesImageChange: 0
+  orignalImage: {fileID: 0}
+  newImage: {fileID: 0}
 --- !u!1 &1711052429
 GameObject:
   m_ObjectHideFlags: 0

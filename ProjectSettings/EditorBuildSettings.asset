@@ -21,11 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Chung City.unity
     guid: bce93e43c84f3f04fbee2d2cc003752d
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: de774479de729a94d80d22d65a0378f0
+    path: Assets/Scenes/Credits.unity
+    guid: 6d681b1f55296f947886d414cc1d2911
   - enabled: 1
     path: Assets/Scenes/LocalPlayerJoin.unity
     guid: f3dd9b03848749a4585318278685349c
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: de774479de729a94d80d22d65a0378f0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 768930b3075483d469fe266637dc8864,
       type: 2}

@@ -142,7 +142,7 @@ public class CharacterSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //BoolCheck();
+
     }
 
     public void UpdatePlayer1Stat(int heroID)
